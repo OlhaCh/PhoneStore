@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -18,12 +19,27 @@ namespace UI
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    
     public partial class MainWindow : Window
     {
+        public Thread thd;
+        public bool IsLogedIn;
         public MainWindow()
         {
             InitializeComponent();
-            //hello
+            IsLogedIn = false;
+        }
+
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow Login = new LoginWindow();
+            Login.Show();
+            IsLogedIn = true;
+        }
+        private void ProfileButton_Click (object sender, RoutedEventArgs e)
+        {
+
+            IsLogedIn = false;
         }
     }
 }
