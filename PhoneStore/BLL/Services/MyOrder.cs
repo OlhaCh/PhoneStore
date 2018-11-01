@@ -13,7 +13,7 @@ namespace BLL
     {
         public OrderDTO GetByNick(UserDTO userDTO)
         {
-            Repository<Order> orders = new Repository<Order>(new Context());
+            Repository<Order> orders = new Repository<Order>(new Context());//DAL CRUD
             var user = Mapper.GetUserFromDTO(userDTO);
             var order = orders.GetAll().FirstOrDefault(x => x.user == user);
             return Mapper.GetDTOFromOrder(order);
