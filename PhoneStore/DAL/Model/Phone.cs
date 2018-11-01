@@ -16,6 +16,6 @@ namespace DAL
         [Required]
         public string Model { get; set; }
         [Required]
-        public string Cost { get; set; }
+        public double Cost { get; set; }
     }
 }

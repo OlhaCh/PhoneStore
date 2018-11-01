@@ -10,8 +10,7 @@ namespace BLL
    [ServiceContract]
    public interface IOrderDTO
     {
-        [OperationContract]
-        IEnumerable<OrderDTO> GetOrder();
+        
         [OperationContract]
         OrderDTO GetByNick(UserDTO user);
     }
